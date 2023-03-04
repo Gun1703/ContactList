@@ -8,22 +8,16 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet var phoneLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    
+    var contactDetail: Person!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = contactDetail.fullName
 
-        // Do any additional setup after loading the view.
+        phoneLabel.text = "Телефон: \(contactDetail.phone)"
+        emailLabel.text = "e-mail: \(contactDetail.email)"
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -8,21 +8,23 @@
 import UIKit
 
 class ListViewController: UITableViewController {
-    var listPerson = Person.getPerson()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    private var listPerson = Person.getPerson()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let detailsVC = segue.destination as? DetailViewController
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        detailsVC?.contactDetail = listPerson[indexPath.row]
     }
 }
-
-// MARK: - UITableViewDataSource
+    
+    // MARK: - UITableViewDataSource
     extension ListViewController {
         override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             listPerson.count
         }
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let currentCell = tableView.dequeueReusableCell(withIdentifier: "contact", for: indexPath)
+            let currentCell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath)
             let currentContact = listPerson[indexPath.row]
             var content = currentCell.defaultContentConfiguration()
             content.text = currentContact.fullName
@@ -31,4 +33,5 @@ class ListViewController: UITableViewController {
             return currentCell
         }
     }
+    
 

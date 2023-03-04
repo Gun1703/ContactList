@@ -48,10 +48,37 @@
                     <view key="view" contentMode="scaleToFill" id="fTd-J7-r3u">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="XR5-vL-abR">
+                                <rect key="frame" x="16.000000000000004" y="204" width="41.333333333333343" height="61.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBt-uT-jQh">
+                                        <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-vM-VAx">
+                                        <rect key="frame" x="0.0" y="41.333333333333343" width="41.333333333333336" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="YrJ-ow-kxi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XR5-vL-abR" firstAttribute="leading" secondItem="YrJ-ow-kxi" secondAttribute="leading" constant="16" id="sGl-ev-cNL"/>
+                            <constraint firstItem="XR5-vL-abR" firstAttribute="top" secondItem="YrJ-ow-kxi" secondAttribute="top" constant="145" id="xLm-GD-rYl"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gKB-RF-Hsl"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="kOs-vM-VAx" id="add-sf-mw3"/>
+                        <outlet property="phoneLabel" destination="fBt-uT-jQh" id="7yR-uC-vSW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swa-2j-7jx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
