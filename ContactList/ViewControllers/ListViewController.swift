@@ -24,7 +24,7 @@ class ListViewController: UITableViewController {
             listPerson.count
         }
         override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let currentCell = tableView.dequeueReusableCell(withIdentifier: "Contact", for: indexPath)
+            let currentCell = tableView.dequeueReusableCell(withIdentifier: "contacts", for: indexPath)
             let currentContact = listPerson[indexPath.row]
             var content = currentCell.defaultContentConfiguration()
             content.text = currentContact.fullName

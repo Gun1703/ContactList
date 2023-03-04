@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FNM-PC-3jF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c67-aM-CTA">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Список контактов-->
         <scene sceneID="PTY-nZ-bkv">
             <objects>
                 <tableViewController id="FNM-PC-3jF" customClass="ListViewController" customModule="ContactList" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="xjn-Jy-yem" kind="presentation" modalPresentationStyle="fullScreen" id="4y1-Jk-JT5"/>
+                                    <segue destination="xjn-Jy-yem" kind="show" id="4y1-Jk-JT5"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -35,11 +35,11 @@
                             <outlet property="delegate" destination="FNM-PC-3jF" id="77J-HN-SWQ"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="6Xg-5M-YqZ"/>
+                    <navigationItem key="navigationItem" title="Список контактов" largeTitleDisplayMode="always" id="AnE-ml-CJn"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZY-uu-NYV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="983.96946564885491" y="-77.464788732394368"/>
+            <point key="canvasLocation" x="1910.6870229007632" y="-77.464788732394368"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="kiT-LF-U1H">
@@ -50,7 +50,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="XR5-vL-abR">
-                                <rect key="frame" x="16.000000000000004" y="204" width="41.333333333333343" height="61.666666666666686"/>
+                                <rect key="frame" x="16.000000000000004" y="247.99999999999997" width="41.333333333333343" height="61.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBt-uT-jQh">
                                         <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
@@ -59,7 +59,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-vM-VAx">
-                                        <rect key="frame" x="0.0" y="41.333333333333343" width="41.333333333333336" height="20.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="41.333333333333314" width="41.333333333333336" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -74,7 +74,9 @@
                             <constraint firstItem="XR5-vL-abR" firstAttribute="top" secondItem="YrJ-ow-kxi" secondAttribute="top" constant="145" id="xLm-GD-rYl"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="gKB-RF-Hsl"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="emailLabel" destination="kOs-vM-VAx" id="add-sf-mw3"/>
                         <outlet property="phoneLabel" destination="fBt-uT-jQh" id="7yR-uC-vSW"/>
@@ -82,7 +84,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swa-2j-7jx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759.5419847328244" y="-77.464788732394368"/>
+            <point key="canvasLocation" x="2686.2595419847326" y="-77.464788732394368"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dfc-jJ-tcr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c67-aM-CTA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="z73-uM-Hpd">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FNM-PC-3jF" kind="relationship" relationship="rootViewController" id="c9z-Mh-4cW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ui-ny-qdZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="983.96946564885491" y="-77.464788732394368"/>
         </scene>
     </scenes>
     <resources>
